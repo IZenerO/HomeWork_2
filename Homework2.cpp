@@ -17,12 +17,11 @@ int main() {
       std::cin >> second_arg;
     } else {
         std::cout << "You entered incorrect argument of the equation: " << std::endl;
+        continue;
     }
     if (second_arg >= LOW_RANGE_VALUE && second_arg <= HIGH_RANGE_VALUE) {
       std::cout << "Please, enter third argument of the equation in range[2...255]: " << std::endl;
       std::cin >> third_arg;
-    } else {
-        std::cout << "You entered incorrect argument of the equation: " << std::endl;
     }
     if (third_arg >= LOW_RANGE_VALUE && third_arg <= HIGH_RANGE_VALUE) {
       const int DISCRIMINANT = std::pow(second_arg, 2) - (CONST_1 * first_arg * third_arg);
@@ -37,6 +36,8 @@ int main() {
       } else {
           std::cout << "Discriminant is negative, try another arguments: " << std::endl;
       }
+    } else {
+        std::cout << "You entered incorrect argument of the equation: " << std::endl;
     }
   } while (true);
 }
