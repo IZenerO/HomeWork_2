@@ -9,30 +9,30 @@ int main() {
     const uint32_t CONST_2 = 2;
     const uint32_t LOW_RANGE_VALUE = 2;
     const uint32_t HIGH_RANGE_VALUE = 255;
-    std::cout << "Please, enter first argument of the equation in range [2...255]: " << std::endl;
+    std::cout << "Please, enter first argument of the equation in range [ " << LOW_RANGE_VALUE << "..." << HIGH_RANGE_VALUE << "]" << std::endl;
     std::cin >> first_arg;
 
     if (first_arg < LOW_RANGE_VALUE || first_arg > HIGH_RANGE_VALUE) {
       std::cout << "You entered incorrect first argument of the equation: " << std::endl;
       continue;
-    } else {
-      std::cout << "Please, enter second argument of the equation in range [2...255]: " << std::endl;
-      std::cin >> second_arg;
-    }
+    } 
+    std::cout << "Please, enter second argument of the equation in range [ " << LOW_RANGE_VALUE << "..." << HIGH_RANGE_VALUE << "]" << std::endl;
+    std::cin >> second_arg;
+    
     if (second_arg < LOW_RANGE_VALUE || second_arg > HIGH_RANGE_VALUE) {
       std::cout << "You entered incorrect second argument of the equation: " << std::endl;
       continue;
-    } else {
-      std::cout << "Please, enter third argument of the equation in range[2...255]: " << std::endl;
-      std::cin >> third_arg;
-    }
+    } 
+    std::cout << "Please, enter third argument of the equation in range [ " << LOW_RANGE_VALUE << "..." << HIGH_RANGE_VALUE << "]" << std::endl;
+    std::cin >> third_arg;
+    
     if (third_arg < LOW_RANGE_VALUE || third_arg > HIGH_RANGE_VALUE) {
       std::cout << "You entered incorrect third argument of the equation: " << std::endl;
       continue;
     } 
     const int DISCRIMINANT = std::pow(second_arg, 2) - (CONST_1 * first_arg * third_arg);
-    const int DETORMINATOR_OF_ROOTS = (CONST_2 * first_arg);
     if (DISCRIMINANT > 0) {
+      const int DETORMINATOR_OF_ROOTS = (CONST_2 * first_arg);
       double root_1 = (-second_arg + std::sqrt(DISCRIMINANT)) / DETORMINATOR_OF_ROOTS;
       double root_2 = (-second_arg - std::sqrt(DISCRIMINANT)) / DETORMINATOR_OF_ROOTS;
       std::cout << "Discriminant: " << DISCRIMINANT << std::endl;
